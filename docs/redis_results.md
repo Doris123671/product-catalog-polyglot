@@ -5,16 +5,18 @@
 ```text
 SET catalog:product_count 5 EX 300
 GET catalog:product_count
+TTL catalog:product_count
 ```
 
-Expected output:
+Observed output:
 
 ```text
 5
+300
 ```
 
 ## TTL behavior observations
-The value is stored with an expiration of 300 seconds (5 minutes), so it will expire automatically after that period if not refreshed.
+The value is stored with an expiration of 300 seconds (5 minutes). The TTL command confirms that the key is active and will expire automatically unless it is refreshed or rewritten.
 
 ## Leaderboard output
 
@@ -23,7 +25,7 @@ ZADD products:price 29.99 "Wireless Mouse" 89.5 "USB-C Hub" 129.99 "Mechanical K
 ZREVRANGE products:price 0 -1 WITHSCORES
 ```
 
-Expected ranking:
+Ranking returned:
 
 ```text
 Mechanical Keyboard 129.99
@@ -34,4 +36,4 @@ Notebook Set 14.99
 ```
 
 ## Pub/Sub message output
-A subscriber receives the published inventory update message in real time, showing that Redis pub/sub supports live notifications.
+A subscriber receives the published inventory update message in real time, showing that Redis pub/sub supports live notifications to all active subscribers.

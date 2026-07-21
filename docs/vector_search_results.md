@@ -25,4 +25,4 @@ USB-C Hub -> 0.1
 ```
 
 ## Why these products were returned
-These products are the closest matches to the query vector because their embeddings are the most similar in numeric space. Lower cosine distance means higher similarity.
+The query vector is closest to the embedding for Mechanical Keyboard, so it is returned first with the smallest cosine distance. USB-C Hub is the next closest match because its vector is still semantically near the query vector. Lower cosine distance means higher similarity.
