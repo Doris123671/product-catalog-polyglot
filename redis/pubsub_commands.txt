@@ -1,0 +1,9 @@
+# Terminal 1
+SUBSCRIBE inventory
+
+# Terminal 2
+PUBLISH inventory "inventory:update: stock for Wireless Mouse now 119"
+
+# Expected output:
+# Terminal 1 receives: "inventory:update: stock for Wireless Mouse now 119"
+# This demonstrates real-time pub/sub notifications to all active subscribers.
