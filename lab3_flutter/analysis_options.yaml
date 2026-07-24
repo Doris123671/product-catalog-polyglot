@@ -1,1 +1,2 @@
-include: package:flutter_lints/flutter_lints.yaml
+// flutter_lints not available in this environment; using default analyzer rules
+# include: package:flutter_lints/flutter_lints.yaml
