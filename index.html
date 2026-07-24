@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpendWise Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">SW</div>
+          <div>
+            <h1>SpendWise</h1>
+            <p>Budget Planner</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Primary navigation">
+          <a class="nav-item active" href="#">Overview</a>
+          <a class="nav-item" href="#">Budgets</a>
+          <a class="nav-item" href="#">Insights</a>
+          <a class="nav-item" href="#">Accounts</a>
+          <a class="nav-item" href="#">Settings</a>
+        </nav>
+
+        <div class="sidebar-card">
+          <p class="eyebrow">Monthly Goal</p>
+          <h3>$4,200</h3>
+          <p>You are pacing 78% of your target for this month.</p>
+        </div>
+      </aside>
+
+      <div class="main-area">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2>Spending snapshot</h2>
+          </div>
+          <div class="topbar-actions">
+            <button class="pill-button" type="button">+ Add budget</button>
+            <div class="avatar" aria-label="User profile">AD</div>
+          </div>
+        </header>
+
+        <main class="dashboard-content">
+          <section class="summary-card" aria-label="Monthly spending summary">
+            <div class="summary-copy">
+              <p class="eyebrow">This month</p>
+              <h3>$3,280</h3>
+              <p>You have spent 81% of your monthly budget.</p>
+            </div>
+            <div class="summary-meter" aria-hidden="true">
+              <span>81%</span>
+            </div>
+          </section>
+
+          <section class="card-grid" aria-label="Budget categories">
+            <article class="category-card" tabindex="0">
+              <div class="card-top">
+                <span class="category-badge food">Food</span>
+                <span class="trend up">+4%</span>
+              </div>
+              <h4>$486</h4>
+              <p>Groceries and dining out</p>
+              <div class="card-row">
+                <span>Budget</span>
+                <strong>$550</strong>
+              </div>
+            </article>
+
+            <article class="category-card" tabindex="0">
+              <div class="card-top">
+                <span class="category-badge transport">Transport</span>
+                <span class="trend down">-2%</span>
+              </div>
+              <h4>$132</h4>
+              <p>Fuel, rides, and train fares</p>
+              <div class="card-row">
+                <span>Budget</span>
+                <strong>$200</strong>
+              </div>
+            </article>
+
+            <article class="category-card" tabindex="0">
+              <div class="card-top">
+                <span class="category-badge rent">Rent</span>
+                <span class="trend steady">On track</span>
+              </div>
+              <h4>$1,240</h4>
+              <p>Monthly apartment payment</p>
+              <div class="card-row">
+                <span>Budget</span>
+                <strong>$1,240</strong>
+              </div>
+            </article>
+
+            <article class="category-card" tabindex="0">
+              <div class="card-top">
+                <span class="category-badge entertainment">Entertainment</span>
+                <span class="trend up">+6%</span>
+              </div>
+              <h4>$214</h4>
+              <p>Streaming, events, and outings</p>
+              <div class="card-row">
+                <span>Budget</span>
+                <strong>$300</strong>
+              </div>
+            </article>
+
+            <article class="category-card" tabindex="0">
+              <div class="card-top">
+                <span class="category-badge savings">Savings</span>
+                <span class="trend up">+8%</span>
+              </div>
+              <h4>$640</h4>
+              <p>Emergency and future goals</p>
+              <div class="card-row">
+                <span>Budget</span>
+                <strong>$700</strong>
+              </div>
+            </article>
+
+            <article class="category-card" tabindex="0">
+              <div class="card-top">
+                <span class="category-badge utilities">Utilities</span>
+                <span class="trend down">-1%</span>
+              </div>
+              <h4>$168</h4>
+              <p>Internet, electricity, and water</p>
+              <div class="card-row">
+                <span>Budget</span>
+                <strong>$190</strong>
+              </div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
