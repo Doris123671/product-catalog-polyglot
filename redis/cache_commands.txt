@@ -1,6 +1,0 @@
-# Redis cache commands for the product catalog
-SET catalog:product_count 5 EX 300
-GET catalog:product_count
-
-# Expected result after creation:
-# 5

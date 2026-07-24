@@ -1,24 +1,23 @@
 # Architecture Overview
 
-This project uses a polyglot persistence approach by combining MongoDB, Redis, and PostgreSQL with pgvector for different workload needs. Each database is chosen for the workload it handles best rather than forcing one technology to do everything.
+This project uses a polyglot persistence approach by combining MongoDB, Redis, and PostgreSQL with pgvector for different workload needs.
 
 ## Why MongoDB was chosen
-MongoDB is well suited for the product catalog because each product can be stored as a single document containing nested fields such as tags and ratings. Its flexible document model makes it easy to evolve the schema as product information changes over time.
+MongoDB is well suited for storing product catalog documents because each product can contain nested fields such as tags and ratings. Its flexible document model makes it easy to evolve the schema as product data changes.
 
 ## Why Redis was chosen
-Redis is used for fast in-memory operations. It is ideal for caching the catalog product count, maintaining a price leaderboard, and supporting pub/sub notifications for inventory events.
+Redis is used for fast in-memory operations. It is ideal for caching the product catalog count, building a price leaderboard, and supporting real-time pub/sub notifications for inventory updates.
 
 ## Why pgvector was chosen
-pgvector extends PostgreSQL so semantic product search can be performed by comparing embedding vectors instead of relying only on exact keyword matches. This is useful when users search with meaning rather than exact terms.
+pgvector extends PostgreSQL for vector similarity search. This makes it possible to find semantically related products by comparing embedding vectors rather than only exact keyword matches.
 
 ## How the technologies work together
-- MongoDB stores the main product catalog and supports filtering and aggregation.
-- Redis provides temporary caching, ranking, and real-time messaging.
-- PostgreSQL with pgvector powers semantic search using vector similarity.
+- MongoDB stores the primary product catalog.
+- Redis provides temporary caching and real-time messaging.
+- PostgreSQL with pgvector supports semantic product search.
 
 ```text
-Client
-  ├─> MongoDB: product catalog, filtering, aggregation
-  ├─> Redis: cache, leaderboard, pub/sub notifications
-  └─> PostgreSQL + pgvector: semantic product search
+Client -> MongoDB (product catalog)
+   |-> Redis (cache + leaderboard + pub/sub)
+   |-> PostgreSQL + pgvector (semantic search)
 ```

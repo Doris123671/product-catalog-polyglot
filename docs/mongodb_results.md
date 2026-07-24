@@ -21,7 +21,7 @@ const projection = {
 const results = db.products.find(query, projection).toArray();
 ```
 
-Returned documents:
+Expected result:
 
 ```json
 [
@@ -33,23 +33,11 @@ Returned documents:
 
 ## Part C: Aggregation pipeline results
 
-The pipeline unwound the ratings arrays and grouped by category to calculate the average rating and count of ratings.
-
 ```json
 [
   {
     "_id": "Electronics",
     "averageRating": 4.5,
-    "ratingCount": 9
-  },
-  {
-    "_id": "Books",
-    "averageRating": 4.47,
-    "ratingCount": 3
-  },
-  {
-    "_id": "Home",
-    "averageRating": 4.1,
     "ratingCount": 3
   }
 ]

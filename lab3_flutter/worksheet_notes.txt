@@ -1,0 +1,15 @@
+Flutter environment audit:
+- `flutter doctor -v` was run successfully from the discovered SDK at `C:\src\flutter\bin\flutter.bat`.
+- The verbose output included details not shown in standard `flutter doctor`, such as the exact Flutter SDK path, the Dart path mismatch warning, and the list of enabled feature flags.
+- The Flutter project already existed and `lib/main.dart` was updated to display "Hello from Doris".
+
+Flutter app explanation:
+- The `lib/main.dart` file contains the root Flutter app entry point (`main()`), the `MyApp` stateless widget, and the `MyHomePage` stateful widget with its associated state class `_MyHomePageState`.
+- `MyApp` builds a `MaterialApp` and sets `MyHomePage` as its home screen, while `MyHomePage` holds the title and creates the mutable state.
+- `_MyHomePageState` keeps a `_counter` field and defines `_incrementCounter()`, which calls `setState()` to update the counter and trigger a rebuild.
+- The `FloatingActionButton` calls `_incrementCounter()` when pressed, causing Flutter to update the UI with the new counter value.
+
+MySQL database notes:
+- The database `lab3_db` was defined with a `products` table using the required columns and constraints.
+- `DECIMAL(10,2)` stores currency values with exact precision for two decimal places, avoiding rounding errors that `FLOAT` can introduce.
+- `NOT NULL` prevents a column from being left empty and requires every inserted row to include a value for that field.

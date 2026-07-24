@@ -1,0 +1,17 @@
+name: lab3_flutter
+version: 1.0.0+1
+publish_to: 'none'
+description: Flutter lab 3 app.
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
